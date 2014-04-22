@@ -1,0 +1,14 @@
+{
+    "name": "Twitter Autoload",
+	"short_name": "Twitter Autoload",
+    "manifest_version": 2,
+	"version": "1.0.0.1",
+    "description": "Autoloads them new tweets, keeping your twitter page up2date",
+    "permissions": ["http://twitter.com/*", "https://twitter.com/*"],
+    "content_scripts" : [{
+        "matches" : ["http://twitter.com/*", "https://twitter.com/*"],
+        "exclude_matches" : ["http://twitter.com/settings/*", "https://twitter.com/settings/*"],
+        "js" : ["autoload.js"]
+    }],
+	"minimum_chrome_version":"33.0.0.0"
+}
