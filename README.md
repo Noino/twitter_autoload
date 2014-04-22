@@ -1,4 +1,4 @@
 twitter_autoload
 ================
 
-Autoloads new tweets
+Chrome extension to autoload new tweets
