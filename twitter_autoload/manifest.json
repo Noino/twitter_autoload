@@ -3,7 +3,7 @@
 	"short_name": "Twitter Autoload",
     "manifest_version": 2,
 	"version": "1.0.0.1",
-    "description": "Autoloads them new tweets, keeping your twitter page up2date",
+    "description": "Automatically loads new tweets to whatever feed you are watching",
     "permissions": ["http://twitter.com/*", "https://twitter.com/*"],
     "content_scripts" : [{
         "matches" : ["http://twitter.com/*", "https://twitter.com/*"],
