@@ -1,0 +1,29 @@
+Changelog:
+
+1.0.0.2
+- New punchline
+
+1.0.0.1
+- Removed useless permissions from manifest
+
+1.0.0.0
+- Stable & Feature complete.
+
+0.0.0.6
+- actually trigger event every time if visible
+
+0.0.0.5
+- only take contenteditable="true" in to account
+
+0.0.0.4
+- trigger updates trough uiShortcutGotoTopOfScreen instead of emulating a '.' press
+- Spam updates less frequently
+- Update while not visible, but less frequently
+- Determine the intention to write by watching the contenteditable attribute instead of a specific class.
+
+0.0.0.3
+- Only loads tweets when tab is "visible". This update requires Chrome version 33.0+
+https://developers.google.com/chrome/whitepapers/pagevisibility
+
+0.0.0.2
+- Initial release
