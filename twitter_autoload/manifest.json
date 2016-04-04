@@ -2,7 +2,7 @@
     "name": "Twitter Autoload",
 	"short_name": "Twitter Autoload",
     "manifest_version": 2,
-	"version": "1.0.0.2",
+	"version": "1.0.1.0",
     "description": "Automatically loads new tweets to whatever feed you are watching",
     "permissions": ["http://twitter.com/*", "https://twitter.com/*"],
     "content_scripts" : [{

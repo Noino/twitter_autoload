@@ -1,5 +1,10 @@
 Changelog:
 
+1.0.1.0
+- Load new tweets when scrolled at or above top of timeline (tweets area)
+- Less spammy updates: keeps up with busy topics, but slows down over time
+- Now also watches for twitters own load new tweets bar, useful for feeds with less frequent content
+
 1.0.0.2
 - New punchline
 
