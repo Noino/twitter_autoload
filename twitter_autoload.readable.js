@@ -8,15 +8,18 @@
 		this.uq=false; // update queued
 		this.v=!document.hidden; // page visible
 		this.exp = -1; // delay exponent
-			
+		this.to = false; // timeout reference
+
 		// new tweets bar observer
 		this.o = new MutationObserver((function(m){  
-			this.up(); 
+			this.undelay('new tweets bar!');
 		}).bind(this));
+		
 		// tweets observer
 		this.o2 = new MutationObserver((function(m){ 
-			this.undelay(); 
+			this.undelay('feed changed'); 
 		}).bind(this));
+		
 		// observer config
 		this.oc = { attributes: false, childList: true, characterData: false };
 		this.tl = document.getElementById('timeline'); // timeline container
@@ -25,6 +28,7 @@
 		document.addEventListener('visibilitychange', 
 			(function(ev){ 
 				if (this.v=!document.hidden && this.uq) { 
+					console.log('we´re visible again');
 					this.tk(); 
 				} 
 			}).bind(this), false
@@ -57,7 +61,10 @@
 				this.uq = false;
 			} else {
 				if (this.v) { 
+					console.log('waiting...');
 					window.setTimeout( this.tk.bind(this), 100); 
+				} else {
+					console.log('exit tk loop, page hidden');
 				}
 			}
 		},
@@ -70,8 +77,11 @@
 				return false;
 			}
 		},
-		undelay: function() {
+		undelay: function(f) {
+			console.log('undelayed: '+f)
 			this.exp = -1;
+			window.clearTimeout(this.to);
+			this.to = window.setTimeout(this.keepup.bind(this), 100 ); 
 		},
 		delay: function() {
 			if (this.exp < 10) { ++this.exp; }
@@ -80,7 +90,8 @@
 			if (this.up()) {
 				this.delay();
 			}
-			window.setTimeout(this.keepup.bind(this), parseInt(this.t0 * Math.pow(1.3, this.exp)) ); 
+			console.log('timeout: '+parseInt(this.t0 * Math.pow(1.3, this.exp)));
+			this.to = window.setTimeout(this.keepup.bind(this), parseInt(this.t0 * Math.pow(1.3, this.exp)) ); 
 		}
 	});
 	

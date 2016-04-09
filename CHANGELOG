@@ -1,5 +1,9 @@
 Changelog:
 
+1.0.1.1
+- Fixed: Made internal timer to reset immediately instead of after next update when new tweets are found
+- Prevent too many simultaneous requests
+
 1.0.1.0
 - Load new tweets when scrolled at or above top of timeline (tweets area)
 - Less spammy updates: still keeps up with busy topics
