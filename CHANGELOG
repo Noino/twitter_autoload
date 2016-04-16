@@ -1,5 +1,9 @@
 Changelog:
 
+1.0.1.2
+- Fixed: Loading at the actual top of timeline, regardless of all the clutter twitter decides to put on top
+- TODO: Figure out a more obvious way to pause updating then focusing a text area incase the user wants to do something above the timeline
+
 1.0.1.1
 - Fixed: Made internal timer to reset immediately instead of after next update when new tweets are found
 - Prevent too many simultaneous requests
